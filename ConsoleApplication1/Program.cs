@@ -9,28 +9,38 @@ using System.Threading.Tasks;
 namespace ConsoleApplication1
 {
 
-    public delegate void Del(int x, string message);
     class Program
     {
         static void Main(string[] args)
         {
-            var list = new List<student>
-            {
-                new student() {Name ="dileep", Std=1 },
-                new student() { Name = "padniya", Std = 2 }
-            };
+            //Bubble sorting 
 
           
-            
-            foreach (var item in list)
-            {
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Std);
-
-            }
             Console.ReadLine();
         }
 
+        public void bubbleSort()
+        {
+             var item = new int[] { 7, 5, 6, 4 };
+
+            for (int j = 0; j < item.Length; j++)
+            {
+                int swap = 0;
+                for (int i = 0; i < item.Length - 1; i++)
+                {
+                    int temp = 0;
+                    if (item[i] > item[i + 1])
+                    {
+                        temp = item[i];
+                        item[i] = item[i + 1];
+                        item[i + 1] = temp;
+                        swap++;
+                    }
+
+                }
+                if (swap == 0) break;
+            }
+        }
         
         public async static Task<int> message()
         {
@@ -55,8 +65,7 @@ namespace ConsoleApplication1
         public string Name{ get; set; }
         public int Std { get; set; }
     }
-
-
+    
     class Node
     {
         public int data;
@@ -68,9 +77,7 @@ namespace ConsoleApplication1
         }
 
     }
-
-
-
+    
     class Solution
     {
         public static Node insert(Node head, int data)
